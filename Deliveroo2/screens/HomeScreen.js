@@ -53,7 +53,9 @@ const HomeScreen = () => {
       </View>
 
       {/* Body */}
-      <ScrollView className='bg-gray-100'>
+      <ScrollView className='bg-gray-100 overflow-auto'
+        style={{ marginBottom: 110 }}
+      >
         {/* Categories */}
         <Categories />
 
