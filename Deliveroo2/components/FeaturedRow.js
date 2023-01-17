@@ -1,7 +1,6 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import { ArrowRightIcon } from 'react-native-heroicons/solid'
-import { ScrollView } from 'react-native-gesture-handler'
 import RestaurantCard from './RestaurantCard'
 
 const FeaturedRow = ({ id, title, description }) => {

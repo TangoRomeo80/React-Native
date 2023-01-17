@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, ScrollView, TextInput } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -8,8 +8,6 @@ import {
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
 } from 'react-native-heroicons/outline'
-import { TextInput } from 'react-native-gesture-handler'
-import { ScrollView } from 'react-native-gesture-handler'
 import Categories from '../components/Categories'
 import FeaturedRow from '../components/FeaturedRow'
 
