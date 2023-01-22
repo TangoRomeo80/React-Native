@@ -1,8 +1,10 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useEffect } from 'react'
 import { useRoute, useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { urlFor } from '../sanity'
+import { useDispatch } from 'react-redux'
+import { setRestaurant } from '../features/restaurantSlice'
 import {
   ArrowLeftIcon,
   ChevronRightIcon,
@@ -15,6 +17,7 @@ import BasketIcon from '../components/BasketIcon'
 
 const RestaurantScreen = () => {
   const navigation = useNavigation()
+  const dispatch = useDispatch()
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -36,6 +39,23 @@ const RestaurantScreen = () => {
       lat,
     },
   } = useRoute()
+
+  useEffect(() => {
+    dispatch(
+      setRestaurant({
+        id,
+        imgUrl,
+        title,
+        rating,
+        genre,
+        address,
+        short_description,
+        dishes,
+        long,
+        lat,
+      })
+    )
+  }, [dispatch])
   return (
     <SafeAreaView>
       <BasketIcon />
